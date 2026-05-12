@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.fade-in-up, .slide-in, .reveal-left, .reveal-right');
+    const animatedElements = document.querySelectorAll('.fade-in-up, .slide-in, .reveal-left, .reveal-right, .reveal-up');
     animatedElements.forEach(el => observer.observe(el));
     
     // Trigger hero animations immediately on load
@@ -106,4 +106,64 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = false;
         }
     });
+
+    // Initialize Leaflet Map
+    if (document.getElementById('listings-map')) {
+        const map = L.map('listings-map').setView([44.6488, -63.5752], 13); // Centered on Halifax
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        // Map Listings Data
+        const mapListings = [
+            {
+                lat: 44.6500,
+                lng: -63.5800,
+                price: "$1,250,000",
+                address: "123 Oceanview Dr",
+                img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                lat: 44.6400,
+                lng: -63.5700,
+                price: "$895,000",
+                address: "45 South End Ave",
+                img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                lat: 44.6300,
+                lng: -63.6000,
+                price: "$2,100,000",
+                address: "88 Northwest Arm Rd",
+                img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        // Custom Map Icon (Gold)
+        const customIcon = L.divIcon({
+            className: 'custom-pin',
+            html: `<div style="background-color: #D4AF37; width: 20px; height: 20px; border-radius: 50%; border: 3px solid #0F172A; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"></div>`,
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
+        });
+
+        // Add Markers to Map
+        mapListings.forEach(listing => {
+            const popupContent = `
+                <div class="map-popup-img" style="background-image: url('${listing.img}')"></div>
+                <div class="map-popup-details">
+                    <h3>${listing.price}</h3>
+                    <p>${listing.address}</p>
+                    <a href="#contact">Inquire Now</a>
+                </div>
+            `;
+
+            L.marker([listing.lat, listing.lng], { icon: customIcon })
+                .addTo(map)
+                .bindPopup(popupContent);
+        });
+    }
 });

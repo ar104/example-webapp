@@ -150,7 +150,7 @@ a {
     position: relative;
     background-color: var(--bg-darker);
     /* In a real scenario, use an image here */
-    background: linear-gradient(rgba(11, 17, 32, 0.8), rgba(11, 17, 32, 0.8)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+    background: linear-gradient(rgba(11, 17, 32, 0.8), rgba(11, 17, 32, 0.8)), url('/images/hero-bg.jpg') center/cover no-repeat;
     color: var(--text-light);
 }
 
@@ -428,4 +428,204 @@ footer {
     .about-image-placeholder {
         margin-bottom: 30px;
     }
+}
+
+/* Listings Section */
+.listings {
+    background-color: var(--bg-light);
+}
+
+.listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.listing-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.listing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.listing-img {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-color);
+    color: var(--bg-darker);
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.listing-details {
+    padding: 25px;
+}
+
+.listing-details h3 {
+    color: var(--bg-darker);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.address {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 15px 0;
+    margin-bottom: 25px;
+}
+
+.features li {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--bg-dark);
+}
+
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+.reveal-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Map Section */
+#listings-map {
+    height: 500px;
+    width: 100%;
+    margin-top: 50px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 1; /* Keep map below navbar */
+}
+
+/* Custom Leaflet Popup Styles */
+.leaflet-popup-content-wrapper {
+    border-radius: 4px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.leaflet-popup-content {
+    margin: 0;
+    width: 250px !important;
+}
+
+.map-popup-img {
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+}
+
+.map-popup-details {
+    padding: 15px;
+}
+
+.map-popup-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    color: var(--bg-dark);
+}
+
+.map-popup-details p {
+    margin: 0 0 10px 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.map-popup-details a {
+    display: block;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--bg-darker);
+    padding: 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.map-popup-details a:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: var(--bg-light);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
+    border-top: 4px solid var(--primary-color);
+}
+
+.quote-mark {
+    font-size: 6rem;
+    color: rgba(212, 175, 55, 0.2);
+    font-family: var(--font-secondary);
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    line-height: 1;
+}
+
+.testimonial-text {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-author strong {
+    color: var(--bg-dark);
+    font-size: 1.1rem;
+}
+
+.testimonial-author span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }

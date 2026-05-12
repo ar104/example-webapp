@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amitabha Roy - Premier Real Estate Services</title>
-    <meta name="description" content="Discover your dream home or sell for top dollar with Amitabha Roy, your trusted real estate professional.">
+    <meta name="description" content="Discover your dream home or sell for top dollar in Halifax, Nova Scotia with Amitabha Roy, your trusted local real estate professional.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,7 +21,9 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#listings">Listings</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact" class="btn btn-outline">Get in Touch</a></li>
                 </ul>
             </nav>
@@ -29,7 +35,7 @@
             <div class="hero-overlay"></div>
             <div class="hero-content container">
                 <h1 class="fade-in-up">Find Your Place in the World.</h1>
-                <p class="fade-in-up delay-1">Expert guidance for buying and selling premium real estate properties. Elevate your living experience with Amitabha Roy.</p>
+                <p class="fade-in-up delay-1">Expert guidance for buying and selling premium real estate properties in Halifax, Nova Scotia. Elevate your living experience with Amitabha Roy.</p>
                 <div class="hero-cta fade-in-up delay-2">
                     <a href="#contact" class="btn btn-primary">Start Your Journey</a>
                     <a href="#services" class="btn btn-secondary">Explore Services</a>
@@ -63,6 +69,63 @@
             </div>
         </section>
 
+        <section class="listings" id="listings">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <h2 class="slide-in">Featured Halifax Properties</h2>
+                    <p class="slide-in delay-1">Explore our exclusive, hand-picked MLS listings.</p>
+                </div>
+                <div class="listings-grid">
+                    <div class="listing-card reveal-up">
+                        <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                            <span class="badge">For Sale</span>
+                        </div>
+                        <div class="listing-details">
+                            <h3>$1,250,000</h3>
+                            <p class="address">123 Oceanview Dr, Halifax, NS</p>
+                            <ul class="features">
+                                <li>4 Beds</li>
+                                <li>3 Baths</li>
+                                <li>2,800 sqft</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline btn-block">Inquire Now</a>
+                        </div>
+                    </div>
+                    <div class="listing-card reveal-up delay-1">
+                        <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                            <span class="badge">Just Listed</span>
+                        </div>
+                        <div class="listing-details">
+                            <h3>$895,000</h3>
+                            <p class="address">45 South End Ave, Halifax, NS</p>
+                            <ul class="features">
+                                <li>3 Beds</li>
+                                <li>2.5 Baths</li>
+                                <li>2,100 sqft</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline btn-block">Inquire Now</a>
+                        </div>
+                    </div>
+                    <div class="listing-card reveal-up delay-2">
+                        <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                            <span class="badge">Pending</span>
+                        </div>
+                        <div class="listing-details">
+                            <h3>$2,100,000</h3>
+                            <p class="address">88 Northwest Arm Rd, Halifax, NS</p>
+                            <ul class="features">
+                                <li>5 Beds</li>
+                                <li>4 Baths</li>
+                                <li>4,500 sqft</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline btn-block">Inquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="listings-map" class="reveal-up delay-1"></div>
+            </div>
+        </section>
+
         <section class="about" id="about">
             <div class="container about-grid">
                 <div class="about-image-wrapper reveal-left">
@@ -71,14 +134,49 @@
                     </div>
                 </div>
                 <div class="about-content reveal-right">
-                    <h2>Unmatched Local Expertise</h2>
-                    <p>With years of experience navigating the complex real estate market, I bring a wealth of knowledge and a dedication to client success that is second to none.</p>
+                    <h2>Unmatched Expertise in Halifax</h2>
+                    <p>With years of experience navigating the complex real estate market of Halifax, Nova Scotia, I bring a wealth of local knowledge and a dedication to client success that is second to none.</p>
                     <p>Whether you're a first-time buyer or a seasoned investor, I am committed to making your real estate transaction seamless, transparent, and highly rewarding.</p>
                     <ul class="stats">
                         <li><strong>150+</strong> Properties Sold</li>
                         <li><strong>$50M+</strong> Sales Volume</li>
                         <li><strong>100%</strong> Client Satisfaction</li>
                     </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <h2 class="slide-in">Client Success Stories</h2>
+                    <p class="slide-in delay-1">Hear what our clients have to say about working with Amitabha Roy.</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card reveal-up">
+                        <div class="quote-mark">"</div>
+                        <p class="testimonial-text">Amitabha made buying our first home in Halifax incredibly easy. His deep knowledge of the South End neighborhoods helped us find the perfect spot for our growing family. Highly recommended!</p>
+                        <div class="testimonial-author">
+                            <strong>Sarah & Mark T.</strong>
+                            <span>First-Time Buyers</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal-up delay-1">
+                        <div class="quote-mark">"</div>
+                        <p class="testimonial-text">We needed to sell our property quickly, and Amitabha's marketing strategy was brilliant. We had multiple offers within 48 hours and closed above asking price. He is a true professional.</p>
+                        <div class="testimonial-author">
+                            <strong>David L.</strong>
+                            <span>Home Seller</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal-up delay-2">
+                        <div class="quote-mark">"</div>
+                        <p class="testimonial-text">As a real estate investor, I rely heavily on Amitabha's insights. He always finds the best off-market deals in Dartmouth and Halifax. His negotiation skills are simply unmatched.</p>
+                        <div class="testimonial-author">
+                            <strong>Elena R.</strong>
+                            <span>Real Estate Investor</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -91,7 +189,7 @@
                     <div class="contact-details">
                         <p><strong>Email:</strong> inquiries@amitabharoy.com</p>
                         <p><strong>Phone:</strong> (555) 123-4567</p>
-                        <p><strong>Office:</strong> 100 Prestige Way, Suite 400</p>
+                        <p><strong>Office:</strong> 100 Prestige Way, Suite 400, Halifax, NS</p>
                     </div>
                 </div>
                 <div class="contact-form-wrapper reveal-right">
@@ -112,9 +210,8 @@
                             <label for="interest">I am interested in:</label>
                             <select id="interest" name="interest" required>
                                 <option value="" disabled selected>Select an option...</option>
-                                <option value="buying">Buying a Home</option>
-                                <option value="selling">Selling a Home</option>
-                                <option value="investing">Real Estate Investing</option>
+                                <option value="buying">Buying</option>
+                                <option value="selling">Selling</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -138,6 +235,8 @@
         </div>
     </footer>
 
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="script.js"></script>
 </body>
 </html>
