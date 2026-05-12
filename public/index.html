@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amitabha Roy - Premier Real Estate Services</title>
+    <meta name="description" content="Discover your dream home or sell for top dollar with Amitabha Roy, your trusted real estate professional.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Amitabha Roy.</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="btn btn-outline">Get in Touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <h1 class="fade-in-up">Find Your Place in the World.</h1>
+                <p class="fade-in-up delay-1">Expert guidance for buying and selling premium real estate properties. Elevate your living experience with Amitabha Roy.</p>
+                <div class="hero-cta fade-in-up delay-2">
+                    <a href="#contact" class="btn btn-primary">Start Your Journey</a>
+                    <a href="#services" class="btn btn-secondary">Explore Services</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <h2 class="slide-in">Bespoke Services</h2>
+                    <p class="slide-in delay-1">Tailored real estate solutions to match your unique aspirations.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card hover-lift">
+                        <div class="service-icon">🏠</div>
+                        <h3>Buy a Home</h3>
+                        <p>Access exclusive listings and expert negotiation to find your perfect sanctuary.</p>
+                    </div>
+                    <div class="service-card hover-lift">
+                        <div class="service-icon">💰</div>
+                        <h3>Sell a Home</h3>
+                        <p>Strategic marketing and market analysis to maximize your property's value.</p>
+                    </div>
+                    <div class="service-card hover-lift">
+                        <div class="service-icon">📈</div>
+                        <h3>Investments</h3>
+                        <p>Identify high-yield opportunities in emerging and established neighborhoods.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container about-grid">
+                <div class="about-image-wrapper reveal-left">
+                    <div class="about-image-placeholder">
+                        <span>Amitabha Roy</span>
+                    </div>
+                </div>
+                <div class="about-content reveal-right">
+                    <h2>Unmatched Local Expertise</h2>
+                    <p>With years of experience navigating the complex real estate market, I bring a wealth of knowledge and a dedication to client success that is second to none.</p>
+                    <p>Whether you're a first-time buyer or a seasoned investor, I am committed to making your real estate transaction seamless, transparent, and highly rewarding.</p>
+                    <ul class="stats">
+                        <li><strong>150+</strong> Properties Sold</li>
+                        <li><strong>$50M+</strong> Sales Volume</li>
+                        <li><strong>100%</strong> Client Satisfaction</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-info reveal-left">
+                    <h2>Let's Talk Real Estate.</h2>
+                    <p>Ready to make a move? Fill out the form, and I will be in touch shortly to discuss your real estate goals.</p>
+                    <div class="contact-details">
+                        <p><strong>Email:</strong> inquiries@amitabharoy.com</p>
+                        <p><strong>Phone:</strong> (555) 123-4567</p>
+                        <p><strong>Office:</strong> 100 Prestige Way, Suite 400</p>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper reveal-right">
+                    <form id="lead-form" class="lead-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Jane Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">I am interested in:</label>
+                            <select id="interest" name="interest" required>
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="buying">Buying a Home</option>
+                                <option value="selling">Selling a Home</option>
+                                <option value="investing">Real Estate Investing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message (Optional)</label>
+                            <textarea id="message" name="message" rows="4" placeholder="How can I help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+                            <span>Send Inquiry</span>
+                        </button>
+                        <div id="form-status" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; <span id="year"></span> Amitabha Roy Real Estate. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
